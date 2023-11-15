@@ -38,9 +38,9 @@ public class MemberPlatinum extends Member implements CanDeposit, CanRequestDeli
 
     @Override
     public void deposit(Integer jumlahDeposit) {
-        this.saldo = jumlahDeposit;
+       return this.saldo = jumlahDeposit;
     }
-
+    
     @Override
     public void tarikTunai(Integer jumlahTarikTunai) {
         if (jumlahTarikTunai > this.saldo){
@@ -49,6 +49,7 @@ public class MemberPlatinum extends Member implements CanDeposit, CanRequestDeli
         else if ( jumlahTarikTunai <= this.saldo){
             this.saldo = this.saldo - jumlahTarikTunai;
         }
+        return jumlahTarikTunai;
     }
 
     @Override
